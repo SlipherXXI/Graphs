@@ -3,6 +3,7 @@
 //
 
 #include "DLList.hpp"
+#include "Queue.hpp"
 
 #ifndef Graph_hpp
 #define Graph_hpp
@@ -18,6 +19,6 @@ public:
 	void addEdge(int VerticeID, int adjVertexID);
 	int getSize();
 	void print();
-	void BFS();
+	void BFS(int s);
 };
 #endif // !Graph_hpp
