@@ -36,33 +36,11 @@ void Queue::enQueue(int VerticeID) {
 }
 
 void Queue::deQueue(int VerticeID) {
-	if (_head != NULL) {
-		Node* currentPtr = _head;
-
-		while (currentPtr != NULL && currentPtr->getVerticeID() != VerticeID) {
-			//update
-			currentPtr = currentPtr->getNext();
-		}
-		if (currentPtr != NULL) {
-			cout << "current " << currentPtr->toString() << endl;
-			if (currentPtr == _head) {
-				_head = currentPtr->getNext();
-				_head->setPrev(NULL);
-				currentPtr->setNext(NULL);
-				currentPtr->setPrev(NULL);
-				delete currentPtr;
-			}
-			else {
-				//->setNext(currentPtr->getNext());
-				currentPtr->getPrev()->setNext(currentPtr->getNext());
-				currentPtr->getNext()->setPrev(currentPtr->getPrev());
-				currentPtr->setNext(NULL);
-				currentPtr->setPrev(NULL);
-
-				delete currentPtr;
-			}
-		}
-	}
+	Node* trash;
+	trash = _head;
+	_head = _head->getNext();
+	delete trash;
+	_size--;
 }
 
 Node* Queue::find(int VerticeID) {
@@ -105,4 +83,3 @@ void Queue::print() {
 
 int Queue::getSize() {
 	return _size;
-}
