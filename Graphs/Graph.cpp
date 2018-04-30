@@ -32,23 +32,19 @@ void Graph::print() {
 }
 
 void Graph::BFS(int s) {
+	Queue bfsQueue;
+	bfsQueue.enQueue(s);
 	bool * visited = new bool[_size];
 	for (int i = 0; i < _size; i++) {
 		visited[i] = false;
-		_listArray[i].enQueue(i);
-		visited[s] = true;
-		enQueue(s);
-		_listArray[i];
 	}
-	while (_size != NULL) {
-		s = _head;
+		visited[s] = true;
+	
+	while (bfsQueue.getSize() > 0) {
+		s = bfsQueue.deQueue(0);
 		cout << s << " ";
-		deQueue(s);
-		for (i = _listArray[adjVertexID].begin(); i != _listArray[adjVertexID].end(); ++i) {
-			if (!visited[*i]) {
-				visited[*i] = true;
-				enQueue(*i);
-			}
-		}
+		
+
+		
 	}
 }
