@@ -35,12 +35,13 @@ void Queue::enQueue(int VerticeID) {
 	enQueue(newNode);
 }
 
-void Queue::deQueue(int VerticeID) {
+int Queue::deQueue(int VerticeID) {
 	Node* trash;
 	trash = _head;
 	_head = _head->getNext();
 	delete trash;
 	_size--;
+	return VerticeID;
 }
 
 Node* Queue::find(int VerticeID) {
@@ -83,3 +84,4 @@ void Queue::print() {
 
 int Queue::getSize() {
 	return _size;
+}
