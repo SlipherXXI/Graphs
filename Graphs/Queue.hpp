@@ -20,7 +20,7 @@ public:
 
 	void enQueue(Node* newNode);
 	void enQueue(int VerticeID);
-	void deQueue(int VerticeID);
+	int deQueue(int VerticeID);
 	Node* find(int VerticeID);
 	void print();
 	int getSize();
