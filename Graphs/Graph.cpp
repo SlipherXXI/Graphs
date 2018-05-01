@@ -43,8 +43,11 @@ void Graph::BFS(int s) {
 	while (bfsQueue.getSize() > 0) {
 		s = bfsQueue.deQueue(0);
 		cout << s << " ";
-		
-
-		
+		for (int i = _listArray[s].getSize(); i != _listArray[s].getSize(); i++) {
+			if (!visited[i]) {
+				visited[i] = true;
+				bfsQueue.enQueue(i);
+			}
+		}
 	}
 }
