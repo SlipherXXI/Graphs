@@ -9,11 +9,13 @@
 
 using namespace std;
 
+//default constructure
 DLList::DLList() {
 	_head = NULL;
 	_size = 0;
 }
 
+//Methods
 void DLList::add(Node* newNode) {
 	if (_head == NULL) {
 		_head = newNode;
