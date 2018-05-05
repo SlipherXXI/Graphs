@@ -1,0 +1,31 @@
+Description
+In this project you will design a data structure to represent a directed graph as an adjacency list. Additionally you will program a breadth-first search (BFS) traversals over the graph. BFS will require you to use a queue. 
+Requirements
+1.	Correctly implement the graph data structure. Support the following operations.
+a.	Load a graph from file using a simple representation.
+b.	Create the graph with a fixed number of vertices.
+c.	Add an edge to the graph.
+d.	For a vertex, calculate all adjacent vertices.
+2.	Perform a breadth-first search of the graph.
+a.	Given a starting vertex, place it in the to-visit queue.
+b.	Remove a vertex from the queue and print that vertex’s information. Place all vertices adjacent to the current vertex in the back of the queue.
+c.	Continue removing and visiting node from the queue until it is empty.
+d.	Do not add duplicate nodes to the queue. You may want to keep a binary search tree to determine which nodes you have already visited.
+
+File format: The first number in the file is the number of vertices. Next a list of edges provides the graph.
+<number of vertices>
+<vertex1>[TAB]<vertex2>
+<vertex1>[TAB]<vertex2>
+
+Example Graph File:
+8
+0	1
+0	4
+1	5
+5	2
+5	6
+2	3
+2	6
+6	3
+6	7
+7	3
