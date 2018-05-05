@@ -15,8 +15,10 @@ private:
 	int _size;
 
 public:
+	//default constructure
 	DLList();
 
+	//Methods
 	void add(Node* newNode);
 	void add(int VerticeID);
 	void remove(int VerticeID);
