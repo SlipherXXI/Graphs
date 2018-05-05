@@ -16,15 +16,16 @@ private:
 	int _size;
 
 public:
+	//default constructure
 	Queue();
 
-	void enQueue(Node* newNode);
+	~Queue();
+
+	//Methods
+	bool isEmpty();
 	void enQueue(int VerticeID);
-	int deQueue(int VerticeID);
-	Node* find(int VerticeID);
-	void print();
+	int deQueue();
+	void display();
 	int getSize();
-
-
 };
 #endif // !Queue_hpp
