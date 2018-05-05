@@ -5,42 +5,62 @@
 //
 
 #include <iostream>
+#include <fstream>
+#include <string>
 #include "DLList.hpp"
 #include "Node.hpp"
 #include "Graph.hpp"
+#include "Queue.hpp"
 
 using namespace std;
 
 int main(int argc, const char* argv[]) {
 
-	Node* nodePtr = new Node(5);
-	cout << nodePtr->toString() << endl;
+	string line;
+	ifstream inFile;
+	inFile.open("C:\\Users\\rslip\\source\\repos\\Graphs\\GraphsProject.txt");
+	if (!inFile) {
+		cout << "Unable to open GraphsProjext.txt" << endl;
+		exit(1);
+	}
+	while (getline(inFile,line)) {
+		
+		cout << line << endl;
 
-	DLList* myList = new DLList();
-	myList->add(nodePtr);
-	myList->print();
-	myList->add(4);
-	myList->print();
-	myList->add(1);
-	myList->print();
-	cout << "============================" << endl;
-	myList->find(4);
-	cout << "============================" << endl;
+		DLList* myList = new DLList();
+		myList->add(0);
+		myList->add(1);
+		myList->add(2);
+		myList->add(3);
+		myList->add(4);
+		myList->add(5);
+		myList->print();
+		
+		Graph myGraph(6);
+		myGraph.addEdge(5, 1);
+		
+		myGraph.addEdge(1, 3);
+		
+		myGraph.addEdge(1, 0);
+		
+		myGraph.addEdge(0, 3);
+	
+		myGraph.addEdge(0, 2);
+		
+		myGraph.addEdge(4, 0);
 
-	DLList* listArray = new DLList[5];
-	listArray[0].add(1);
-	listArray[0].print();
-	listArray[1].add(5);
-	listArray[1].print();
-	cout << "============================" << endl;
+		myGraph.addEdge(4, 3);
 
-	Graph A = Graph(5);
-	A.addEdge(0, 1);
-	A.addEdge(1, 2);
-	A.addEdge(2, 3);
-	A.addEdge(4, 0);
 
-	A.print();
+		myGraph.BFS(3);
+	}
+	inFile.close();
+
+	
+
+	
+
+	
 
 	cin.get();
 	return 0;
